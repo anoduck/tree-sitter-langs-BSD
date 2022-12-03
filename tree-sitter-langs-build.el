@@ -239,7 +239,7 @@ infrequent (grammar-only changes). It is different from the version of
     ('darwin "macos")
     ('gnu/linux "linux")
     ('windows-nt "windows")
-    ('berkley-unix "bsd")
+    ('berkeley-unix "berkeley-unix")
     (_ (error "Unsupported system-type %s" system-type))))
 
 (defconst tree-sitter-langs--suffixes '(".dylib" ".dll" ".so")
@@ -265,7 +265,7 @@ If VERSION and OS are not spcified, use the defaults of
                 ("macos" (if (string-prefix-p "aarch64" system-configuration)
                              "aarch64-apple-darwin"
                            "x86_64-apple-darwin"))
-		("berkley-unix" "x86_64-unknown-openbsd"))
+		("berkeley-unix" "x86_64-unknown-openbsd"))
               version ext)
     (tree-sitter-langs--old-bundle-file
      ext version os)))
