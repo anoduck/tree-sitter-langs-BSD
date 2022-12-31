@@ -29,6 +29,16 @@ PROJECT_ROOT=$(cd "$here/.."; pwd)
             file "$(which emacs)"
             otool -L "$(which emacs)"
             ;;
+        (Berkley-Unix)
+            echo ┌─────────────────────────────────────────────────────────────────────
+            echo └ Grammar binaries:
+            file bin/*.so
+            ldd bin/*.so
+            echo ┌─────────────────────────────────────────────────────────────────────
+            echo └ Emacs:
+            file "$(which emacs)"
+            ldd "$(which emacs)"
+            ;;
         (*)
             echo "Unknown system $system"
     esac
